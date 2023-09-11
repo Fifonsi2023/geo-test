@@ -3,18 +3,18 @@
     stages{
     stage('maven clean'){
         steps{
-        sh  'opt/maven/bin/mvn clean'
+        sh 'opt/maven/bin/mvn clean'
         }
     }
         stage('maven install'){
         steps{
-          sh  'opt/maven/bin/mvn install'
+          sh 'opt/maven/bin/mvn install'
             
         }
     }
         stage('maven package'){
         steps{
-         sh   'opt/maven/bin/mvn package'
+         sh 'opt/maven/bin/mvn package'
         }
     }
  }
