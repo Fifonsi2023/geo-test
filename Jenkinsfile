@@ -4,7 +4,7 @@
         maven 'M2_HOME'
     }
    
-    }
+    
     stages{
     stage('maven clean'){
         steps{
@@ -31,6 +31,7 @@
            nexusVersion: 'nexus3', protocol: 'http',
             repository: 'fifonsi-repo', version: '0.0.2-SNAPSHOT'
     }
+ }
  }
  }
  
