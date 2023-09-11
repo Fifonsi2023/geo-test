@@ -6,7 +6,7 @@
     stages{
     stage('maven clean'){
         steps{
-        sh  'mvn clean'
+        sh  'opt/maven/bin/mvn clean'
         }
     }
     stage('maven install'){
