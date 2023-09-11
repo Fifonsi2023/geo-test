@@ -22,7 +22,12 @@
     }
  stage('upload artifact'){
     steps{
-        sh 'curl --upload-file target/bioMedical-0.0.2-SNAPSHOT.jar -u admin:devops -v http://198.58.119.40:8081/repository/fifonsi-repo/'
+        nexusArtifactUploader artifacts: [[artifactId: 'bioMedical',
+         classifier: '', file: 'target/bioMedical-0.0.2-SNAPSHOT.jar',
+          type: 'jar']], credentialsId: 'NexusID', groupId: 'com.spring',
+          nexusUrl: '198.58.119.40:8081/repository/fifonsi-repo/',
+           nexusVersion: 'nexus3', protocol: 'http',
+            repository: 'fifonsi-repo', version: '0.0.2'
     }
  }
  }
